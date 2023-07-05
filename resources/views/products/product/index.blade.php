@@ -155,7 +155,7 @@ setInterval(function(){
         <h4>${{$val->price}}</h4>
     </div>
     @include('products.product.cart')
-   
+
 
 </div>
 @endforeach
@@ -188,7 +188,7 @@ setInterval(function(){
     <br>
             <h4>${{$val->price}}</h4>
         </div>
-        <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+        @include('products.product.cart')
 
     </div>
 
@@ -221,7 +221,7 @@ setInterval(function(){
         <br>
                 <h4>${{$val->price}}</h4>
             </div>
-            <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+            @include('products.product.cart')
 
         </div>
 
@@ -255,7 +255,7 @@ setInterval(function(){
             <br>
                     <h4>${{$val->price}}</h4>
                 </div>
-                <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                @include('products.product.cart')
 
             </div>
 
@@ -288,7 +288,7 @@ setInterval(function(){
                 <br>
                         <h4>${{$val->price}}</h4>
                     </div>
-                    <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                    @include('products.product.cart')
 
                 </div>
 
@@ -323,7 +323,7 @@ setInterval(function(){
                     <br>
                             <h4>${{$val->price}}</h4>
                         </div>
-                        <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                        @include('products.product.cart')
 
                     </div>
 
@@ -356,7 +356,7 @@ setInterval(function(){
                         <br>
                                 <h4>${{$val->price}}</h4>
                             </div>
-                            <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                            @include('products.product.cart')
 
                         </div>
 
@@ -390,7 +390,7 @@ setInterval(function(){
                             <br>
                                     <h4>${{$val->price}}</h4>
                                 </div>
-                                <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                                @include('products.product.cart')
 
                             </div>
 
@@ -410,28 +410,30 @@ setInterval(function(){
 
                 </div>
                     <div class="row"  >
+                        @php
+                        $lenovo= App\Models\phone::OrderBy('viewer','DESC')->where('brand','=','lenovo')->limit(5)->get();
+                     @endphp
+@foreach ($lenovo as $item=>$val)
 
-                @for ($i=0; $i<5; $i++)
+
                 <div class="col-lg-2 col-md-3 col-sm-3 col-xs-5 col-5 pro mt-3">
-                <a href="">
-                    <img src="img/iphone1.jpg" alt="">
+                <a href="{{route('product.detail',$val->id)}}">
+                    <img src="img/{{$val->image}}" alt="">
                     <div class="des">
                     </a>
-                        <span>iphone 14</span>
+                        <span>{{$val->name}}</span>
                 <br>
-                        <h4>$900</h4>
+                        <h4>${{$val->price}}</h4>
                     </div>
-                    <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                    @include('products.product.cart')
 
                 </div>
-
-
-                @endfor
-                </div>
-                </div>
+ @endforeach
+  </div>
+ </div>
                                             </div>
-                </div>
-                @include('footer')
+ </div>
+ @include('footer')
 @endsection
 
 

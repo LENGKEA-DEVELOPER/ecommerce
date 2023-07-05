@@ -37,7 +37,10 @@ Route::controller(MenuController::class)->group(function(){
 
 });
 Route::controller(CartController::class)->group(function(){
-
+    Route::post('/product.cart','store')->name('product.store');
+    Route::get('/product.order','index')->name('order.index');
+    Route::get('/product.order/{cart}','show')->name('order.show');
+    Route::Delete('/product.order/{cart}','destroy')->name('cart.delete');
 });
 Route::controller(FeedbackController::class)->group(function(){
     Route::post('/product.contact','store')->name('contact.store');

@@ -27,6 +27,9 @@
                                                             <div class=" imgbrands ">
                                                              <a href="{{route('product.brand_watch',"xiaomi")}}"> <img src="/img/xiaomi.jpg" alt=""></a>
                                                                 </div>
+                                                                <div class=" imgbrands ">
+                                                                    <a href="{{route('product.brand_watch',"lenovo")}}"> <img src="/img/lenovo.jpg" alt=""></a>
+                                                                       </div>
 
 
 
@@ -47,7 +50,7 @@
             <br>
                     <h4>${{$val->price}}</h4>
                 </div>
-                <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                @include('products.product.cart')
 
             </div>
 

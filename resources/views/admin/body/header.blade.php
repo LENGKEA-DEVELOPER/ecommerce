@@ -30,7 +30,7 @@
                 </button>
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img style="object-fit: cover;" class="rounded-circle header-profile-user" src="img/fb.jpg"
+                    <img style="object-fit: cover;" class="rounded-circle header-profile-user" src="/img/fb.jpg"
                         alt="Header Avatar">
                     <span class=" d-xl-inline-block ms-1">Admin</span>
                     <i class="mdi mdi-chevron-down d-xl-inline-block"></i>

@@ -101,7 +101,13 @@
                         <li><a href="{{route('location.create')}}">Insert Location</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{route('order.index')}}" >
+                        <i class="ri-earth-line"></i>
+                        <span>Order Page</span>
+                    </a>
 
+                </li>
                 <li>
                     <a href="{{route('feedback.index')}}" >
                         <i class="ri-earth-line"></i>
@@ -109,6 +115,7 @@
                     </a>
 
                 </li>
+
 
             </ul>
         </div>

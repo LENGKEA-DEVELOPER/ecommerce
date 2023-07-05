@@ -2,7 +2,24 @@
 @section('content')
 
 <link rel="stylesheet" href="/css/detail.css">
+<script>
+    function subtotal(){
+        var price=document.getElementById('price').value;
+        var qty=parseInt(document.getElementById('qty').value);
+        var total= parseInt(price)* parseInt(qty);
+        document.getElementById("result").innerHTML=total;
 
+    }
+    function qty(){
+        var qty=parseInt(document.getElementById('qty').value);
+        var price=document.getElementById('price').value;
+        var qty=parseInt(document.getElementById('qty').value);
+        var total= parseInt(price)* parseInt(qty);
+        document.getElementById("result2").value=qty;
+        document.getElementById("result3").value=total;
+
+    }
+</script>
 <div class = "main-wrapper">
     <div class = "container">
         <div class = "product-div">
@@ -34,7 +51,7 @@
 
             </div>
             <div class = "product-div-right">
-                <span class = "product-name" style="color:#d76a03">$5000</span>
+                <span class = "product-name" style="color:#d76a03">${{$val->price}}</span>
                 <hr style="height:2px;color:#d76a03">
                  <ul>
 
@@ -48,10 +65,14 @@
  <li>Call us:099717800 </li>
                  </ul>
                 <div class = "btn-groups">
-                    <input type="number" class="number" value="1">
-                    <button type = "button" class = "buy-now-btn"><i class = "fas fa-wallet"></i>buy now</button>
-                </div>
+                    <input type="number" id="qty" class="number" value="1" onclick="subtotal();">
 
+                    @include('products.product.cart_detail')
+                </div>
+                <input type="hidden" id="price" value="{{$val->price}}">
+
+                <br>
+                <span style="color:#d76a03;font-size:20px">Total:$</span><span id="result" style="color:#d76a03;font-size:20px">{{$val->price}}</span>
                 <h6 style="margin-top: 15px">Category: {{$val->brand}}</h6>
 
 
@@ -81,7 +102,7 @@
     <br>
             <h4>${{$val->price}}</h4>
         </div>
-        <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+        @include('products.product.cart')
 
     </div>
     @endforeach

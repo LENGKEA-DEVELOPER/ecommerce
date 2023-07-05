@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('gmail');
             $table->string('telephone');
             $table->string('price');
+            $table->string('address');
+            $table->string('qty');
+            $table->string('total');
             $table->string('image');
             $table->timestamps();
         });

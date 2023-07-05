@@ -32,9 +32,9 @@
             <div class="footer-col">
                 <h4>online shop</h4>
                 <ul>
-                    <li><a href="#">Smartphone</a></li>
-                    <li><a href="#">Laptop</a></li>
-                    <li><a href="#">Smartwatch</a></li>
+                    <li><a href="{{route('product.phone')}}">Smartphone</a></li>
+                    <li><a href="{{route('product.laptop')}}">Laptop</a></li>
+                    <li><a href="{{route('product.watch')}}">Smartwatch</a></li>
 
 
                 </ul>

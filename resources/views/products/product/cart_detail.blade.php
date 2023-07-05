@@ -1,6 +1,4 @@
-
-
-<a href="" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fal fa-shopping-cart cart" ></i></a>
+<button type = "button" class = "buy-now-btn"  data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="qty();"><i class = "fas fa-wallet"></i>buy now</button>
 <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
   @csrf
   <!-- Button trigger modal -->
@@ -22,11 +20,11 @@
             <input type="text" name="telephone" placeholder="Phone Number" class="form-control">
             <label for="" class="form-label">Address</label>
             <input type="text" name="address" placeholder="Address" class="form-control">
-            <input type="hidden" name="qty" value="1">
+            <input type="hidden" id="result2" name="qty">
             <input type="hidden" name="product" value="{{$val->name}}">
             <input type="hidden" name="image" value="{{$val->image}}">
             <input type="hidden" name="price" value="{{$val->price}}">
-            <input type="hidden" name="total"value="{{$val->price}}">
+            <input type="hidden" name="total"id="result3">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

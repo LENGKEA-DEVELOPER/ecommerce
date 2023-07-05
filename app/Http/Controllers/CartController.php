@@ -14,7 +14,8 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        $order=cart::all();
+    return view('admin.order.index',compact('order'));
     }
 
     /**
@@ -35,7 +36,19 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate=([
+            'product'=>'required',
+            'customer'=>'required',
+            'gmail'=>'required',
+            'telephone'=>'required',
+            'price'=>'required',
+            'address'=>'required',
+            'image'=>'required'
+
+         ]);
+         $input=$request->all();
+         cart::create($input);
+         return redirect()->route('product.index');
     }
 
     /**
@@ -46,7 +59,7 @@ class CartController extends Controller
      */
     public function show(cart $cart)
     {
-        
+return view('admin.order.show',compact('cart'));
     }
 
     /**

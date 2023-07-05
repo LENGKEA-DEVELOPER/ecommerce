@@ -14,9 +14,11 @@
                             <div class=" imgbrands ">
                              <a href="{{route('product.brand_laptop',"huawei")}}"> <img src="/img/huawei.jpg" alt=""></a>
                                 </div>
-        </div>
+                             <div class=" imgbrands ">
+                         <a href="{{route('product.brand_laptop',"lenovo")}}"> <img src="/img/lenovo.jpg" alt=""></a>
 
-
+                        </div>
+                    </div>
     <div class="row">
         <div class="col-12" style="background-color:#F1F1F1;padding:10px; margin-left:10px">
             LAPTOP
@@ -31,7 +33,7 @@
             <br>
                     <h4>${{$val->price}}</h4>
                 </div>
-                <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                @include('products.product.cart')
 
             </div>
             @endforeach

@@ -61,7 +61,7 @@
             <br>
                     <h4>${{$val->price}}</h4>
                 </div>
-                <a href="#2"><i class="fal fa-shopping-cart cart"></i></a>
+                @include('products.product.cart')
 
             </div>
             @endforeach

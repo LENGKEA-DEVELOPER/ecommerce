@@ -89,7 +89,7 @@ $brand_watch=phone::where('brand','=',"$brand")->where('category','=','3')->pagi
      */
     public function store(Request $request)
     {
-        //
+    
     }
 
     /**

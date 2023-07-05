@@ -14,6 +14,9 @@ class cart extends Model
         'gmail',
         'telephone',
         'price',
+        'address',
+        'qty',
+        'total',
         'image'
     ];
 }
